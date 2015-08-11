@@ -1,3 +1,7 @@
+--  Type for objects which _may_ have a value.
+--
+--  License: ISC
+
 generic
    type Element is private;
 package JSA.Generic_Optional_Value is

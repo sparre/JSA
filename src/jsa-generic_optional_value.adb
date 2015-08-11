@@ -1,3 +1,5 @@
+--  License: ISC
+
 with Ada.Text_IO;
 
 package body JSA.Generic_Optional_Value is

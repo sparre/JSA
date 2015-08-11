@@ -1,29 +1,29 @@
-Build and Test Setup [1]
-========================
+# General, Reusable Packages from JSA Research & Innovation [1]
 
-This is my build and test "framework".  It represents a generalised version of
-my (currently) preferred arrangement of the building and testing of an Ada
-project.
+A collection of hopefully general and reusable packages.
 
-"Makefile", "ada_2012.gpr" and "tests/" are intended to be reused as-is.
+Provided "as is" by JSA Research & Innovation.  Support contracts and
+consulting services are available on request.
 
-"Makefile.project" is intended for fixed, project specific parameters.
-
-"Makefile.project_rules" is intended for project specific build rules.
-
-Configuration parameters should be written (as "make" variables) to ".config",
-which will be included by "Makefile".
-
-".hgignore" is intended as a starting point for a project specific ignore file.
-
-"the_project.gpr" is intended as a starting point for a GNAT project file for
-the project.
-
-Ada source files should be kept under "src/".
+Bug reports are (not) very welcome.  Please report any errors or omissions
+at <http://repositories.jacob-sparre.dk/jsa/issues> or by e-mail to
+<bugs@jacob-sparre.dk>.
 
 
-Included tests
---------------
+## License
+
+The Ada packages supplied in this repository are distributed under the ISC
+license, unless something else is noted in the individual files.
+
+
+## Testing
+
+    make test
+
+runs the included test suite.
+
+
+### Included tests
 
 The repository comes with two ready-to-use test cases:
 
@@ -33,15 +33,22 @@ The repository comes with two ready-to-use test cases:
 2) 'unused_units' - warns about units which aren't compiled.
 
 
-Links
------
+## Building
+
+    make build
+
+builds all the packages in the repository, but the intended use is to include
+the sources of the library in your project and compiling on demand.
+
+
+## Links
 
 If you want to find free Ada tools or libraries AdaIC [2] is an excellent
 starting point.  You can also take a look at my other source text
 repositories [3] or my web site [4].
 
 [1] Source text repository:
-    http://repositories.jacob-sparre.dk/reference-build-and-test-setup
+    http://repositories.jacob-sparre.dk/jsa
 [2] Free Ada Tools and Libraries:
     http://www.adaic.org/ada-resources/tools-libraries/
 [3] My repositories on Bitbucket:

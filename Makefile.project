@@ -6,3 +6,5 @@ GENERATED_SOURCES=src/jsa-mercurial.ads
 
 SCRIPTS=
 
+TEST_OUTPUT=
+

@@ -52,4 +52,6 @@ package body JSA.Generic_Optional_Value is
             Item => "JSA.Generic_Optional_Value.Value (""" & Item & """);");
          raise;
    end Value;
+
+   protected body Buffer is separate;
 end JSA.Generic_Optional_Value;

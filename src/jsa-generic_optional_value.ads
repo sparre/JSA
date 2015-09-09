@@ -31,4 +31,14 @@ package JSA.Generic_Optional_Value is
    generic
       with function Value (Item : in     String) return Element;
    function Value (Item : in     String) return Instance;
+
+   protected type Buffer is
+      procedure Set (Item : in     Element);
+      procedure Clear;
+      entry Get (Item :    out Instance);
+   private
+      Stored  : Instance;
+      Changed : Boolean := False;
+   end Buffer;
+
 end JSA.Generic_Optional_Value;

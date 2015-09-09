@@ -8,6 +8,7 @@ project JSA is
    for Main use ("jsa-debugging",
                  "jsa-generic_optional_value",
                  "jsa-generic_table_text_io",
+                 "jsa-intermediate_backups",
                  "jsa-mercurial");
 
    package Builder  renames Ada_2012.Builder;

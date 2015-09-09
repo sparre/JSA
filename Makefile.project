@@ -2,9 +2,11 @@ PROJECT=jsa
 
 GENERATED_EXECUTABLES=
 
-GENERATED_SOURCES=src/jsa-mercurial.ads
+GENERATED_SOURCES=src/jsa-mercurial.ads \
+                  ahven
 
 SCRIPTS=
 
-TEST_OUTPUT=
+TEST_OUTPUT=tests/results \
+            tests/unit_tests/bin/jsa-tests-run
 

@@ -6,6 +6,7 @@ project JSA is
    for Source_Dirs use ("src/");
 
    for Main use ("jsa-debugging",
+                 "jsa-directories",
                  "jsa-generic_optional_value",
                  "jsa-generic_table_text_io",
                  "jsa-intermediate_backups",

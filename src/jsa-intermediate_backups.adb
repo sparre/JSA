@@ -1,5 +1,6 @@
 with
-  Ada.Calendar;
+  Ada.Calendar,
+  Ada.Directories;
 
 package body JSA.Intermediate_Backups is
    In_A_Loop  : Boolean  := False;
@@ -48,4 +49,18 @@ package body JSA.Intermediate_Backups is
    begin
       return In_A_Loop;
    end In_Loop;
+
+   procedure Rename_As_Backup (Name : in String) is
+      use Ada.Directories;
+      Backup : constant String := Name & "~";
+   begin
+      if Exists (Name) then
+         if Exists (Backup) then
+            Delete_File (Backup);
+         end if;
+
+         Rename (Old_Name => Name,
+                 New_Name => Backup);
+      end if;
+   end Rename_As_Backup;
 end JSA.Intermediate_Backups;

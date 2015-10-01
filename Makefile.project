@@ -1,8 +1,9 @@
-PROJECT=jsa
+PROJECT=JSA
 
-GENERATED_EXECUTABLES=
+GENERATED_EXECUTABLES=bin/$(LC_PROJECT)-demo
 
-GENERATED_SOURCES=src/jsa-mercurial.ads \
+GENERATED_SOURCES=$(HG_STATE_SOURCE) \
+                  $(PROJECT_DEMO_SOURCE) \
                   ahven
 
 SCRIPTS=

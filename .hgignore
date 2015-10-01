@@ -26,10 +26,12 @@ obj/*.ad[sb].metrix
 
 # Generated source files:
 src/jsa-mercurial.ads
+src/jsa-demo.adb
 
 # Generated object files:
 obj/*.ali
 obj/*.o
 
 # Generated executables:
+bin/jsa-demo
 

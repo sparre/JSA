@@ -18,6 +18,9 @@ PREFIX ?= $(HOME)
 
 PROCESSORS ?= `(test -f /proc/cpuinfo && grep -c ^processor /proc/cpuinfo) || echo 1`
 
+REPOSITORY_STATE  = .hg/dirstate
+REPOSITORY_CONFIG = .hg/hgrc
+
 all: build metrics
 
 build: build-depends fix-whitespace $(GENERATED_SOURCES)
@@ -57,7 +60,15 @@ fix-whitespace:
 metrics:
 	@gnat metric -j$(PROCESSORS) -P $(LC_PROJECT)
 
-$(HG_STATE_SOURCE): Makefile .hg/hgrc .hg/dirstate $(PROJECT_ROOT_SOURCE)
+$(REPOSITORY_CONFIG):
+	@mkdir -p $(shell dirname $(REPOSITORY_CONFIG))
+	@touch $(REPOSITORY_CONFIG)
+
+$(REPOSITORY_STATE):
+	@mkdir -p $(shell dirname $(REPOSITORY_STATE))
+	@touch $(REPOSITORY_STATE)
+
+$(HG_STATE_SOURCE): Makefile $(REPOSITORY_CONFIG) $(REPOSITORY_STATE) $(PROJECT_ROOT_SOURCE)
 	@mkdir -p src
 	@echo 'package '$(PROJECT)'.Mercurial is'                    >  $(HG_STATE_SOURCE)
 	@echo '   Revision : constant String (1 .. 53) :='           >> $(HG_STATE_SOURCE)

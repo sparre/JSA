@@ -11,6 +11,7 @@ HG_REVISION         = `hg tip --template '{node}' 2>/dev/null || echo N/A`
 GENERATED_SOURCES  += $(HG_STATE_SOURCE)
 
 PROJECT_DEMO_SOURCE = src/$(LC_PROJECT)-demo.adb
+GENERATED_SOURCES  += $(PROJECT_DEMO_SOURCE)
 
 EXECUTABLES=$(GENERATED_EXECUTABLES) $(SCRIPTS)
 
@@ -26,7 +27,7 @@ all: build metrics
 build: build-depends fix-whitespace $(GENERATED_SOURCES)
 	gnatmake -j$(PROCESSORS) -p -P $(LC_PROJECT)
 
-test: build metrics
+test: build metrics $(EXECUTABLES)
 	@mkdir -p tests/results
 	@./tests/build
 	@./tests/run

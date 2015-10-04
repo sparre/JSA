@@ -2,9 +2,7 @@ PROJECT=JSA
 
 GENERATED_EXECUTABLES=bin/$(LC_PROJECT)-demo
 
-GENERATED_SOURCES=$(HG_STATE_SOURCE) \
-                  $(PROJECT_DEMO_SOURCE) \
-                  ahven
+GENERATED_SOURCES=ahven
 
 SCRIPTS=
 
